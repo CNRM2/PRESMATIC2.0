@@ -1,16 +1,14 @@
-using PRESMATIC2._0.Models;
 using System.Collections.ObjectModel;
+using PRESMATIC2._0.Models;
 
 namespace PRESMATIC2._0.Views;
 
-public partial class NewPresupuesto : ContentPage
+public partial class Presupuesto : ContentPage
 {
-    public NewPresupuesto()
+    public Presupuesto()
     {
         InitializeComponent();
-
     }
-
     private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
     {
         var materiales = new ObservableCollection<Materials>(Materials_Repository.SearchMateriales(((SearchBar)sender).Text));
@@ -26,7 +24,8 @@ public partial class NewPresupuesto : ContentPage
 
 
     }
-    private void Materiales_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+
+    private void listMateriales_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
 
     }

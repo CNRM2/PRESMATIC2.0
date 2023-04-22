@@ -3,27 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRESMATIC2._0.Views.HomePage"
              Title="HomePage">
-    <Grid
-        VerticalOptions="Fill"
-        BackgroundColor="#3139E0">
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStopCollection>
-                    <GradientStop Offset="0" Color="#1B0D59"/>
-                    <GradientStop Offset="1" Color="#3139E0"/>
-                </GradientStopCollection>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid>
         <VerticalStackLayout
 
             Spacing= "25"
             Padding="30"
-            VerticalOptions="Center"
-            BackgroundColor="Transparent">
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="White">
             <Image Source="presmatic.png" HeightRequest="150" WidthRequest="150"/>
             <Label Text="Selecciona la opción a ejecutar" HorizontalOptions="Center"/>
-            <Button  x:Name="Btn_Presupuesto" FontSize="Caption" FontAttributes="Bold" Text="Nuevo Presupuesto" TextColor="Black" HeightRequest="45" WidthRequest="287" BorderColor="Black" CornerRadius="29" HorizontalOptions="Center" BackgroundColor="White" Clicked="Btn_Presupuesto_Clicked"/>
-
+            <Button x:Name="btnpushpres" Clicked="btnpushpres_Clicked" BackgroundColor="Black" IsEnabled="True"/>
         </VerticalStackLayout>
     </Grid>
 

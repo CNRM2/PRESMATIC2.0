@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRESMATIC2._0.Views.Presupuesto"
+             Title="Presupuesto">
+
+    <Grid BackgroundColor="#3139E0"
+          Padding="5"
+          RowDefinitions="50,*,50"
+          ColumnDefinitions="*">
+        <SearchBar
+            BackgroundColor="#3139E0"
+            Grid.Row="0"
+            Grid.Column="0"
+            Placeholder="Buscar Material"
+            TextChanged="SearchBar_TextChanged">
+        </SearchBar>
+        <ListView
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="listMateriales"
+            BackgroundColor="#3139E0"
+            SeparatorColor="Silver"
+            RowHeight="65"
+            ItemSelected="listMateriales_ItemSelected"
+            VerticalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding N_Material}"
+                        TextColor="White"
+                        Detail="{Binding Precio}"
+                        DetailColor="White"
+                        >
+                        <TextCell.ContextActions>
+                            <MenuItem
+
+                                Text="Delete"
+                                IsDestructive="True"
+                                Clicked="MenuItem_Clicked"
+                                CommandParameter="{Binding .}">
+                            </MenuItem>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

@@ -5,11 +5,14 @@ public partial class HomePage : ContentPage
     public HomePage()
     {
         InitializeComponent();
-
     }
 
-    private async void Btn_Presupuesto_Clicked(object sender, EventArgs e)
+
+
+    private void btnpushpres_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Page);
+        Navigation.PushModalAsync(new Presupuesto());
+
+
     }
 }
