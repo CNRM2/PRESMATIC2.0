@@ -6,7 +6,7 @@
 
     <Grid BackgroundColor="#3139E0"
           Padding="5"
-          RowDefinitions="50,*,50"
+          RowDefinitions="50,*,*,*"
           ColumnDefinitions="*">
         <SearchBar
             BackgroundColor="#3139E0"
@@ -23,7 +23,7 @@
             SeparatorColor="Silver"
             RowHeight="65"
             ItemSelected="listMateriales_ItemSelected"
-            VerticalOptions="Center">
+            >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell
@@ -34,13 +34,26 @@
                         >
                         <TextCell.ContextActions>
                             <MenuItem
-
                                 Text="Delete"
                                 IsDestructive="True"
                                 Clicked="MenuItem_Clicked"
                                 CommandParameter="{Binding .}">
                             </MenuItem>
                         </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="ListaMaterialesSelect" Grid.Row="2"
+                  Grid.Column="0" BackgroundColor="DimGray"
+                  SeparatorColor="Silver"
+                  RowHeight="65"
+                  Margin="0,20,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding N_Material}"
+                        Detail="{Binding Precio}">
                     </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

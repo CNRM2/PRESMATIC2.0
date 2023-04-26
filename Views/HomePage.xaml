@@ -5,14 +5,24 @@
              Title="HomePage">
     <Grid>
         <VerticalStackLayout
-
             Spacing= "25"
-            Padding="30"
+            Padding="0"
             VerticalOptions="FillAndExpand"
             BackgroundColor="White">
             <Image Source="presmatic.png" HeightRequest="150" WidthRequest="150"/>
             <Label Text="Selecciona la opción a ejecutar" HorizontalOptions="Center"/>
-            <Button x:Name="btnpushpres" Clicked="btnpushpres_Clicked" BackgroundColor="Black" IsEnabled="True"/>
+            <Button x:Name="btnpushpres" Clicked="btnpushpres_Clicked" BackgroundColor="Black" IsEnabled="True" Text="Crear nuevo Presupuesto" VerticalOptions="CenterAndExpand" HeightRequest="65"/>
+            <VerticalStackLayout VerticalOptions="Center">
+                <Label x:Name="txtNombreMaterial" Text="Nombre Material:" TextColor="Black"/>
+                <Entry x:Name="NbMaterial" BackgroundColor="Gray" Placeholder=""/>
+                <Label x:Name="txtPrecioMaterial" Text="Precio Material:"  TextColor="Black"/>
+                <Entry x:Name="PrecioMat" BackgroundColor="Gray" Placeholder=""/>
+                <Label x:Name="txtIdMaterial" Text="Id Material:"  TextColor="Black"/>
+                <Entry x:Name="idMaterial" BackgroundColor="Gray" Placeholder=""/>
+                <Button x:Name="NuevoMaterial" Clicked="NuevoMaterial_Clicked" BackgroundColor="Blue" Text="Agregar Nuevo Material" TextColor="Black"/>
+            </VerticalStackLayout>
+
+
         </VerticalStackLayout>
     </Grid>
 
