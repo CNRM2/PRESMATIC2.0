@@ -51,9 +51,12 @@
 		<None Remove="Resources\AppIcon\presmatic.png" />
 		<None Remove="Resources\AppIcon\presmaticicom.svg" />
 		<None Remove="Resources\Images\btniniciosesion.png" />
+		<None Remove="Resources\Images\configuracion.png" />
 		<None Remove="Resources\Images\entrycontrasena.png" />
 		<None Remove="Resources\Images\entryusuario.png" />
+		<None Remove="Resources\Images\ladrillo.png" />
 		<None Remove="Resources\Images\presmatic.png" />
+		<None Remove="Resources\Images\presupuesto.png" />
 		<None Remove="Resources\Splash\presmaticsplash.svg" />
 	</ItemGroup>
 
@@ -66,7 +69,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
 		<PackageReference Include="SQLite" Version="3.13.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
@@ -74,11 +77,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<MauiXaml Update="LoginPage.xaml">
+		<MauiXaml Update="Views\Configuraciones.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\FlyoutPageMenu.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\FlyoutPageT.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\LoginPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Views\HomePage.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Nuevo Material.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Views\Presupuesto.xaml">
 			<Generator>MSBuild:Compile</Generator>

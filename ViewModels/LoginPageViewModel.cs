@@ -1,12 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using PRESMATIC2._0.Models;
+﻿using PRESMATIC2._0.Models;
 using PRESMATIC2._0.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace PRESMATIC2._0.ViewModels
@@ -38,7 +31,8 @@ namespace PRESMATIC2._0.ViewModels
             {
                 if (string.Equals(loginData.Password, Password))
                 {
-                    await Navigation.PushModalAsync(new HomePage());
+                    Application.Current.MainPage = new FlyoutPageT();
+
                 }
                 else
                 {
@@ -48,7 +42,9 @@ namespace PRESMATIC2._0.ViewModels
             else
             {
                 await App.Current.MainPage.DisplayAlert("failure", "Invalid Username", "Ok");
+
             }
+
         }
 
         private void OnRegisterCommand(object obj)
@@ -59,5 +55,6 @@ namespace PRESMATIC2._0.ViewModels
             App.Database.SaveLoginDataAsync(lm);
             App.Current.MainPage.DisplayAlert("Success", "Registration uccessful", "Ok");
         }
+
     }
 }

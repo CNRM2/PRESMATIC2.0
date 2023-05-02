@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRESMATIC2._0.Views.Nuevo_Material"
+             Title="Nuevo_Material"
+             BackgroundColor="White">
+    <VerticalStackLayout VerticalOptions="Center" Margin="20,0,20,0">
+        <Label x:Name="txtNombreMaterial" Text="Nombre Material:" TextColor="Black"/>
+        <Frame HeightRequest="60" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+            <Grid>
+                <Entry x:Name="NbMaterial" FontSize="Small" HeightRequest="45" Placeholder="Ingrese el nombre del material" TextColor="Black"/>
+            </Grid>
+        </Frame>
+
+        <Label x:Name="txtPrecioMaterial" Text="Precio Material:"  TextColor="Black"/>
+        <Frame HeightRequest="60" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+            <Grid>
+                <Entry x:Name="PrecioMat" FontSize="Small" HeightRequest="45" Placeholder="Ingrese el Precio" TextColor="Black"/>
+            </Grid>
+        </Frame>
+        <Label x:Name="txtIdMaterial" Text="Id Material:"  TextColor="Black"/>
+        <Frame HeightRequest="60" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+            <Grid>
+                <Entry x:Name="idMaterial" FontSize="Small" HeightRequest="45" TextColor="Black" Placeholder="Ingrese el ID"/>
+            </Grid>
+        </Frame>
+        <Button x:Name="NuevoMaterial" Clicked="NuevoMaterial_Clicked" Margin="0,20,0,0" BackgroundColor="Blue" Text="Agregar Nuevo Material" TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>

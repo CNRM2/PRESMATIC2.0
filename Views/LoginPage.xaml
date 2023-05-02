@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRESMATIC2._0.LoginPage"
+             xmlns:local="clr-namespace:PRESMATIC2._0"
+             Title="LoginPage"
+             x:Name="LoginPage1">
+
+    <StackLayout>
+        <Grid
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="#323BF0">
+
+            <Image Source="presmatic.png" Margin="0,100,0,80" VerticalOptions="StartAndExpand" HorizontalOptions="Center" HeightRequest="200" WidthRequest="150"/>
+            <VerticalStackLayout
+                BackgroundColor="#323BF0"
+                VerticalOptions="Center"
+                Margin="0,0,0,-225">
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" >
+                    <Frame BackgroundColor="Transparent" HeightRequest="95" WidthRequest="550"  Margin="20,20,20,-30"  HasShadow="True" CornerRadius="15" BorderColor="Transparent" HorizontalOptions="FillAndExpand">
+                        <Grid>
+                            <Image Source="entryusuario.png"   HeightRequest="54" WidthRequest="550"/>
+                            <Entry Text="{Binding Username}" Margin="90,0,0,0"  TextColor="GhostWhite"  Placeholder="Correo" Keyboard="Email"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" Margin="0,0,0,20">
+                    <Frame  BackgroundColor="Transparent" HeightRequest="95" WidthRequest="550"   Margin="20,0,20,20"  HasShadow="True" CornerRadius="15" BorderColor="Transparent" HorizontalOptions="FillAndExpand">
+                        <Grid>
+                            <Image Source="entrycontrasena.png"  HeightRequest="54" WidthRequest="550"/>
+                            <Entry x:Name="contraseña"  Text="{Binding Password}" Margin="90,0,0,0"  TextColor="GhostWhite"  Placeholder="Contraseña" IsPassword="True" Keyboard="Email"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <ImageButton Source="btniniciosesion.png" Margin="0,-20,0,0" HorizontalOptions="Center" Command="{Binding LoginCommand}"  />
+                <Button  Text="Registrar" Margin="0,05,0,0" WidthRequest="100" CornerRadius="15" HorizontalOptions="Center" TextColor="White" BackgroundColor="Transparent" Command="{Binding RegisterCommand}"/>
+            </VerticalStackLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

@@ -1,4 +1,8 @@
-﻿using PRESMATIC2._0.ViewModels;
+﻿using Microsoft.Maui.Controls.Compatibility.Hosting;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Handlers;
+using Microsoft.Maui.LifecycleEvents;
+using PRESMATIC2._0.ViewModels;
 using PRESMATIC2._0.Views;
 
 namespace PRESMATIC2._0;
@@ -7,8 +11,11 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+
         var builder = MauiApp.CreateBuilder();
         builder
+
+
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
             {
@@ -17,5 +24,6 @@ public static class MauiProgram
             });
 
         return builder.Build();
+
     }
 }

@@ -12,4 +12,10 @@ public partial class LoginPage : ContentPage
         this.BindingContext = new LoginViewModel(this.Navigation);
     }
 
+    public LoginPage(FlyoutPageT flyoutPageT)
+    {
+        FlyoutPageT = flyoutPageT;
+    }
+
+    public FlyoutPageT FlyoutPageT { get; }
 }

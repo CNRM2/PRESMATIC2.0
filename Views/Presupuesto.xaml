@@ -4,16 +4,16 @@
              x:Class="PRESMATIC2._0.Views.Presupuesto"
              Title="Presupuesto">
 
-    <Grid BackgroundColor="#3139E0"
-          Padding="5"
-          RowDefinitions="50,*,*,*"
-          ColumnDefinitions="*">
+    <VerticalStackLayout BackgroundColor="#3139E0"
+                         Padding="5" VerticalOptions="Fill">
         <SearchBar
             BackgroundColor="#3139E0"
             Grid.Row="0"
             Grid.Column="0"
             Placeholder="Buscar Material"
-            TextChanged="SearchBar_TextChanged">
+            TextChanged="SearchBar_TextChanged"
+            Focused="SearchBar_Focused"
+            Unfocused="SearchBar_Unfocused">
         </SearchBar>
         <ListView
             Grid.Row="1"
@@ -44,19 +44,23 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListView x:Name="ListaMaterialesSelect" Grid.Row="2"
-                  Grid.Column="0" BackgroundColor="DimGray"
-                  SeparatorColor="Silver"
-                  RowHeight="65"
-                  Margin="0,20,0,0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell
-                        Text="{Binding N_Material}"
-                        Detail="{Binding Precio}">
-                    </TextCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+        <Grid Margin="0,80,0,0" VerticalOptions="CenterAndExpand">
+            <ListView x:Name="ListaMaterialesSelect" Grid.Row="2"
+                      Grid.Column="0" BackgroundColor="DimGray"
+                      SeparatorColor="Silver"
+                      RowHeight="65"
+                      Margin="0,20,0,0"
+                      VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding N_Material}"
+                            Detail="{Binding Precio}">
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </VerticalStackLayout>
+
 </ContentPage>
