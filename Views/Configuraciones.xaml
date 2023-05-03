@@ -3,24 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRESMATIC2._0.Views.Configuraciones"
              xmlns:local="clr-namespace:PRESMATIC2._0.Models"
-
-             Title="Configuraciones">
+             Title="Configuraciones"
+             BackgroundColor="White">
     <VerticalStackLayout>
         <Label
             Text="CONFIGURACIONES"
             VerticalOptions="Start"
             HorizontalOptions="Center"
             FontSize="Title"
-            Margin="0,40,0,0"/>
+            Margin="0,40,0,0"
+            TextColor="Black"/>
 
-        <VerticalStackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-            </Grid>
+        <VerticalStackLayout Padding="0,150,0,0">
+            <Frame CornerRadius="0">
+                <Grid>
+                    <Grid.ColumnDefinitions set="Auto"/>
+                    <Grid.RowDefinitions set="55"/>
+                    <VerticalStackLayout>
+                        <Button Text="Agregar Ruta de Guardado" CornerRadius="0"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+            <Frame CornerRadius="0" Margin="0,5,0,0">
+                <Grid>
+                    <Grid.RowDefinitions set="55"/>
+                    <Grid.ColumnDefinitions set="Auto"/>
+                    <VerticalStackLayout>
+                        <Button Text="Cargar Materiales de un Archivo" CornerRadius="0"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+            <Frame CornerRadius="15" Margin="80,150,80,50">
+                <Grid>
+                    <Grid.RowDefinitions set="55"/>
+                    <Grid.ColumnDefinitions set="Auto"/>
+                    <VerticalStackLayout>
+                        <Button Text="Cerrar Sesión" CornerRadius="0"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
