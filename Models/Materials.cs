@@ -14,8 +14,9 @@ namespace PRESMATIC2._0.Models
     public class Materials
     {
 
-
+        [PrimaryKey, AutoIncrement]
         public int MaterialId { get; set; }
+
         public string N_Material { get; set; }
         public Double Precio { get; set; }
         public int Cantidad { get; set; }

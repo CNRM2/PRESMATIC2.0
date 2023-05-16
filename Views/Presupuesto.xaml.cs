@@ -20,12 +20,12 @@ namespace PRESMATIC2._0.Views
             ListaMaterialesSelect.ItemsSource = elementoSeleccionados;
         }
 
-        public void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        public async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             var searchBar = (SearchBar)sender;
             var searchText = searchBar.Text;
 
-            var materiales = new ObservableCollection<Materials>(Materials_Repository.SearchMateriales(searchText));
+            var materiales = new ObservableCollection<Materials>(await Materials_Repository.SearchMateriales(searchText));
             listMateriales.ItemsSource = materiales;
 
             if (string.IsNullOrWhiteSpace(searchText) || isSearchBarFocused)
@@ -55,18 +55,25 @@ namespace PRESMATIC2._0.Views
             listMateriales.Unfocus();
         }
 
-        private void listMateriales_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void listMateriales_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var elementoSeleccionado1 = e.SelectedItem as Materials;
-            if (elementoSeleccionado1 != null && !elementoSeleccionados.Contains(elementoSeleccionado1))
+            if (elementoSeleccionado1 != null && !elementoSeleccionados.Any(x => x.MaterialId == elementoSeleccionado1.MaterialId))
             {
                 elementoSeleccionados.Add(elementoSeleccionado1);
                 ListaMaterialesSelect.ItemsSource = elementoSeleccionados;
                 listMateriales.SelectedItem = null;
                 listMateriales.Unfocus();
 
+                // Actualizar la información del material en la base de datos
+                using (var db = MaterialsDatabase.Instance)
+                {
+                    await db.database.UpdateAsync(elementoSeleccionado1);
+                }
             }
         }
+
+
 
         private void MenuItem_Clicked(object sender, EventArgs e)
         {

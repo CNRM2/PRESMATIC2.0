@@ -4,6 +4,7 @@ using Microsoft.Maui.Handlers;
 using Microsoft.Maui.LifecycleEvents;
 using PRESMATIC2._0.ViewModels;
 using PRESMATIC2._0.Views;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace PRESMATIC2._0;
 
@@ -17,6 +18,7 @@ public static class MauiProgram
 
 
             .UseMauiApp<App>()
+            .ConfigureSyncfusionCore()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

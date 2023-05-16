@@ -25,5 +25,7 @@
             </Grid>
         </Frame>
         <Button x:Name="NuevoMaterial" Clicked="NuevoMaterial_Clicked" Margin="0,20,0,0" BackgroundColor="Blue" Text="Agregar Nuevo Material" TextColor="White"/>
+
+        <Button x:Name="CargarMaterial" Clicked="CargarMaterial_Clicked" Margin="0,20,0,0" BackgroundColor="Blue" Text="Cargar Archivo CVS" TextColor="White"/>
     </VerticalStackLayout>
 </ContentPage>
